@@ -53,21 +53,21 @@ const App: React.FC = () => {
   return (
     <div className={`relative min-h-screen selection:bg-black selection:text-white dark:selection:bg-white dark:selection:text-black overflow-x-hidden ${isDarkMode ? 'dark' : ''}`}>
       <div className="bg-background text-foreground dark:bg-black dark:text-white transition-colors duration-500">
-        
+
         {/* Custom Cursor */}
-        <div 
+        <div
           className="custom-cursor hidden md:block z-[9999] opacity-50 dark:opacity-100"
           style={{ transform: `translate(${mousePos.x - 10}px, ${mousePos.y - 10}px)` }}
         />
 
-        <Header 
-          isDarkMode={isDarkMode} 
-          toggleTheme={toggleTheme} 
-          isMenuOpen={isMenuOpen} 
-          setIsMenuOpen={setIsMenuOpen} 
-          onNavClick={scrollTo} 
+        <Header
+          isDarkMode={isDarkMode}
+          toggleTheme={toggleTheme}
+          isMenuOpen={isMenuOpen}
+          setIsMenuOpen={setIsMenuOpen}
+          onNavClick={scrollTo}
         />
-        
+
         <main className="relative">
           {/* Hero Section */}
           <section id="home" className="sticky top-0 z-0 h-screen w-full overflow-hidden">
@@ -76,8 +76,8 @@ const App: React.FC = () => {
 
           {/* Main content wrapper */}
           <div className="relative z-10 bg-background dark:bg-black rounded-t-[40px] md:rounded-t-[100px] transition-all duration-500">
-            <div className="max-w-4xl mx-auto px-6 space-y-48 py-32 md:py-48">
-              
+            <div className="max-w-4xl mx-auto px-6 space-y-32 pt-32 pb-12 md:pt-48 md:pb-20">
+
               <section id="about">
                 <About />
               </section>
@@ -95,7 +95,7 @@ const App: React.FC = () => {
               </section>
 
               <section id="testimonials" className="relative overflow-visible">
-                 <div className="flex items-center space-x-4 mb-12">
+                <div className="flex items-center space-x-4 mb-12">
                   <h2 className="text-xs font-black text-gray-400 dark:text-gray-500 uppercase tracking-[0.2em] transition-colors">(03 / Recognition)</h2>
                   <div className="h-[1px] flex-grow bg-black/5 dark:bg-white/10 transition-colors"></div>
                 </div>
@@ -117,14 +117,14 @@ const App: React.FC = () => {
 
         <AnimatePresence>
           {isMenuOpen && (
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, x: '100%' }}
               animate={{ opacity: 1, x: 0 }}
               exit={{ opacity: 0, x: '100%' }}
               transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
               className="fixed inset-0 z-[120] bg-black text-white flex flex-col items-center justify-center space-y-8"
             >
-              <button 
+              <button
                 onClick={() => setIsMenuOpen(false)}
                 className="absolute top-8 right-8 p-2 text-white/50 hover:text-white transition-colors"
               >

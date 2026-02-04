@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Twitter, Instagram, Music } from 'lucide-react';
+import { Github, Instagram, Music } from 'lucide-react';
 
 interface FooterProps {
   onNavClick: (id: string) => void;
@@ -9,21 +9,21 @@ interface FooterProps {
 
 const Footer: React.FC<FooterProps> = ({ onNavClick }) => {
   const socialLinks = [
-    { Icon: Twitter, label: 'X', url: '#' },
-    { 
-      Icon: Instagram, 
-      label: 'Instagram', 
-      url: 'https://www.instagram.com/kaushik_mohanty_?igsh=c3JhZ2h1dXZ3MHJz' 
+    { Icon: Github, label: 'GitHub', url: 'https://github.com/0xKaushik-dev' },
+    {
+      Icon: Instagram,
+      label: 'Instagram',
+      url: 'https://www.instagram.com/kaushik_mohanty_?igsh=c3JhZ2h1dXZ3MHJz'
     },
-    { 
-      Icon: Music, 
-      label: 'YouTube Music', 
-      url: 'https://music.youtube.com/playlist?list=PLqOKtncJnpXkpIynPxxzcIfga93GC0BmT&si=NXV9CCfKeGjAEAXc' 
+    {
+      Icon: Music,
+      label: 'YouTube Music',
+      url: 'https://music.youtube.com/playlist?list=PLqOKtncJnpXkpIynPxxzcIfga93GC0BmT&si=NXV9CCfKeGjAEAXc'
     }
   ];
 
   return (
-    <footer className="mt-20 px-4 md:px-6 pb-6">
+    <footer className="mt-10 px-4 md:px-6 pb-6">
       <div className="bg-black text-white rounded-[48px] md:rounded-[80px] p-8 md:p-24 space-y-24">
         {/* Top Section: CTA */}
         <div className="space-y-14">
@@ -35,14 +35,14 @@ const Footer: React.FC<FooterProps> = ({ onNavClick }) => {
           </div>
 
           <div className="space-y-8">
-            <a 
+            <a
               href="mailto:hello.kaushikmohanty@gmail.com"
               className="group flex items-center space-x-3 text-2xl md:text-3xl font-light hover:opacity-70 transition-opacity"
             >
               <span className="border-b border-white/20 pb-1">Get in touch</span>
               <span className="inline-block transform transition-transform group-hover:translate-x-1 group-hover:-translate-y-1 text-white/40">↗</span>
             </a>
-            
+
             <p className="text-white/30 font-light text-lg tracking-tight">
               // Available for global remote 2026
             </p>

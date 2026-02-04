@@ -71,7 +71,7 @@ const Hero: React.FC = () => {
 
           <BlurredStagger
             text={`Pick a plan, submit a job request,\nand your イメージ\nwill kickoff within 24 hours.`}
-            className="text-3xl md:text-5xl font-light leading-tight tracking-tight text-white max-w-lg"
+            className="text-2xl md:text-5xl font-light leading-tight tracking-tight text-white max-w-lg"
           />
 
           <motion.div
