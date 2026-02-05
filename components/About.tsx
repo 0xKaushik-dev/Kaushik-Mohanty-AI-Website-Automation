@@ -18,7 +18,7 @@ const About: React.FC = () => {
       {/* Main Title Statement - Using MagicText */}
       <div className="max-w-4xl">
         <div className="text-black dark:text-white">
-          <MagicText text="An AI Automation Specialist focused on building scalable, autonomous digital systems—transforming manual development challenges into intelligent AI workflows. From rapid prototyping to full-scale automated deployments, solutions are designed with smart automation pipelines, intuitive interfaces, and reliable cloud infrastructure to bring logic to life through efficient, self-running systems. ®" />
+          <MagicText text="AI Automation Specialist building scalable, autonomous systems that transform manual processes into intelligent, self-running workflows. Focused on efficiency, reliability, and real-world impact." />
         </div>
       </div>
 

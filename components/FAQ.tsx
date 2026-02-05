@@ -8,22 +8,28 @@ const FAQ: React.FC = () => {
 
   return (
     <div className="space-y-12 py-12">
-      <div className="flex items-center space-x-4">
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6, ease: "easeOut" }}
+        className="flex items-center space-x-4"
+      >
         <h2 className="text-[10px] font-bold text-gray-400 dark:text-gray-500 uppercase tracking-[0.4em] transition-colors">(FAQ)</h2>
         <div className="h-[1px] flex-grow bg-black/5 dark:bg-white/10 transition-colors"></div>
-      </div>
+      </motion.div>
 
       <div className="max-w-2xl mx-auto space-y-6">
         {FAQS.map((faq, idx) => (
-          <motion.div 
-            key={idx} 
+          <motion.div
+            key={idx}
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.7, delay: idx * 0.1, ease: [0.22, 1, 0.36, 1] }}
+            transition={{ duration: 0.7, delay: idx * 0.1, ease: "easeOut" }}
             className="bg-white dark:bg-white/5 border border-black/5 dark:border-white/10 rounded-[40px] overflow-hidden transition-all"
           >
-            <button 
+            <button
               onClick={() => setOpenIndex(openIndex === idx ? null : idx)}
               className="w-full px-10 py-10 flex items-center justify-between text-left group"
             >

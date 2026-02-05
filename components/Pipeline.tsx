@@ -11,24 +11,30 @@ const IconMap: any = {
 const Pipeline: React.FC = () => {
   return (
     <div className="space-y-16">
-      <div className="flex items-end justify-between border-b border-black/5 dark:border-white/10 pb-8 transition-colors">
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6, ease: "easeOut" }}
+        className="flex items-end justify-between border-b border-black/5 dark:border-white/10 pb-8 transition-colors"
+      >
         <div className="space-y-2">
           <h2 className="text-[10px] font-bold text-gray-400 dark:text-gray-500 uppercase tracking-[0.4em]">(01 / AI Pipeline)</h2>
           <p className="text-xl font-light text-gray-600 dark:text-gray-300 transition-colors">The Automation Workflow</p>
         </div>
         <div className="text-[10px] font-bold uppercase tracking-[0.2em] text-gray-400 dark:text-gray-500">Step-by-step logic</div>
-      </div>
+      </motion.div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {PIPELINE_STEPS.map((step, idx) => {
           const Icon = IconMap[step.icon];
           return (
-            <motion.div 
+            <motion.div
               key={step.id}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
-              transition={{ duration: 0.8, delay: idx * 0.1, ease: [0.22, 1, 0.36, 1] }}
+              transition={{ duration: 0.8, delay: idx * 0.1, ease: "easeOut" }}
               className="p-10 rounded-[48px] bg-white dark:bg-white/5 border border-black/5 dark:border-white/10 shadow-sm dark:shadow-none space-y-8 group transition-all"
             >
               <div className="w-14 h-14 rounded-full border border-black/5 dark:border-white/10 flex items-center justify-center text-black dark:text-white transition-all">

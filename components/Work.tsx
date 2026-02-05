@@ -6,12 +6,18 @@ import { PROJECTS } from '../constants';
 const Work: React.FC = () => {
   return (
     <div className="space-y-12">
-      <div className="flex items-end justify-between border-b border-black/5 dark:border-white/10 pb-8 transition-colors">
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6, ease: "easeOut" }}
+        className="flex items-end justify-between border-b border-black/5 dark:border-white/10 pb-8 transition-colors"
+      >
         <div className="space-y-2">
           <h2 className="text-[10px] font-bold text-gray-400 dark:text-gray-500 uppercase tracking-[0.4em]">(02 / Prototypes)</h2>
           <p className="text-xl font-light text-gray-600 dark:text-gray-300 transition-colors">AI-Generated Portfolio Showcase</p>
         </div>
-      </div>
+      </motion.div>
 
       <div className="space-y-32">
         {PROJECTS.map((project, idx) => (
@@ -32,7 +38,7 @@ const Work: React.FC = () => {
               <div className="overflow-hidden rounded-[56px] bg-gray-100 dark:bg-gray-900 relative aspect-video shadow-2xl transition-colors">
                 <motion.img
                   whileHover={{ scale: 1.02 }}
-                  transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+                  transition={{ duration: 0.8, ease: "easeOut" }}
                   src={project.imageUrl}
                   alt={project.title}
                   className="w-full h-full object-cover grayscale brightness-95 group-hover:grayscale-0 group-hover:brightness-100 transition-all duration-700"

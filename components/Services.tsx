@@ -6,10 +6,16 @@ import { SERVICES } from '../constants';
 const Services: React.FC = () => {
   return (
     <div className="space-y-16">
-      <div className="flex items-center space-x-4">
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6, ease: "easeOut" }}
+        className="flex items-center space-x-4"
+      >
         <h2 className="text-[10px] font-bold text-gray-400 dark:text-gray-500 uppercase tracking-[0.4em] transition-colors">(Our Services)</h2>
         <div className="h-[1px] flex-grow bg-black/5 dark:bg-white/10 transition-colors"></div>
-      </div>
+      </motion.div>
 
       <div className="grid gap-8">
         {SERVICES.map((s, idx) => (
