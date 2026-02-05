@@ -11,6 +11,7 @@ import Services from './components/Services';
 import FAQ from './components/FAQ';
 import Footer from './components/Footer';
 import { Testimonial } from './components/ui/design-testimonial';
+import { Cursor } from './components/ui/inverted-cursor';
 
 const App: React.FC = () => {
   const [isDarkMode, setIsDarkMode] = useState(() => {
@@ -18,8 +19,6 @@ const App: React.FC = () => {
     return saved === 'dark' || (!saved && window.matchMedia('(prefers-color-scheme: dark)').matches);
   });
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
-
   useEffect(() => {
     localStorage.setItem('theme', isDarkMode ? 'dark' : 'light');
     const root = window.document.documentElement;
@@ -31,14 +30,6 @@ const App: React.FC = () => {
       document.body.style.backgroundColor = '#f8f8f8';
     }
   }, [isDarkMode]);
-
-  useEffect(() => {
-    const handleMouseMove = (e: MouseEvent) => {
-      setMousePos({ x: e.clientX, y: e.clientY });
-    };
-    window.addEventListener('mousemove', handleMouseMove);
-    return () => window.removeEventListener('mousemove', handleMouseMove);
-  }, []);
 
   const toggleTheme = () => setIsDarkMode(!isDarkMode);
 
@@ -55,10 +46,9 @@ const App: React.FC = () => {
       <div className="bg-background text-foreground dark:bg-black dark:text-white transition-colors duration-500">
 
         {/* Custom Cursor */}
-        <div
-          className="custom-cursor hidden md:block z-[9999] opacity-50 dark:opacity-100"
-          style={{ transform: `translate(${mousePos.x - 10}px, ${mousePos.y - 10}px)` }}
-        />
+        <div className="hidden md:block">
+          <Cursor />
+        </div>
 
         <Header
           isDarkMode={isDarkMode}
